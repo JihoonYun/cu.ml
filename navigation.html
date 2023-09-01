@@ -10,15 +10,30 @@
 </head>
 <body>
     <ul>
-        <li><a href="javascript:void(0);" onclick="showContent('home')">Home</a></li>
-        <li><a href="javascript:void(0);" onclick="showContent('machine-learning')">Machine Learning!!</a>
-            <ul>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="toggle-button">Home</a>
+            <ul class="submenu">
+                <li><a href="javascript:void(0);" onclick="showContent('home')">Home</a></li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="toggle-button">Machine Learning</a>
+            <ul class="submenu collapsed">
+                <li><a href="javascript:void(0);" onclick="showContent('machine-learning')">Overview</a></li>
                 <li><a href="javascript:void(0);" onclick="showContent('machine-learning-a')">A</a></li>
                 <li><a href="javascript:void(0);" onclick="showContent('machine-learning-b')">B</a></li>
                 <li><a href="javascript:void(0);" onclick="showContent('machine-learning-c')">C</a></li>
             </ul>
         </li>
-        <li><a href="javascript:void(0);" onclick="showContent('about-me')">About me</a></li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="toggle-button">About me</a>
+            <ul class="submenu">
+                <li><a href="javascript:void(0);" onclick="showContent('about-me')">About me</a></li>
+            </ul>
+        </li>
     </ul>
+
+    <script src="collapse.js"></script>
 </body>
+</html>
 </html>
