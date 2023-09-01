@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function setContentTitle(title) {
+            document.getElementById('content-title').innerText = title;
+        }
+    </script>
+</head>
+<body>
+    <h1 id="content-title">Machine Learning Class 2023</h1>
+    <div id="home" onload="setContentTitle('Home')">
+        <!-- Home content here -->
+        <h2>Home</h2>
+        <p>Welcome to the Home page.</p>
+    </div>
+    <div id="machine-learning" onload="setContentTitle('Machine Learning')">
+        <!-- Machine Learning content here -->
+        <h2>Machine Learning</h2>
+        <p>Explore the exciting world of Machine Learning.</p>
+    </div>
+    <div id="about-me" onload="setContentTitle('About me')">
+        <!-- About me content here -->
+        <h2>About me</h2>
+        <p>Learn more about the author of this page.</p>
+    </div>
+</body>
+</html>
