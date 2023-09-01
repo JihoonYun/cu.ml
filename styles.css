@@ -1,7 +1,7 @@
 /* styles.css */
 body {
     padding: 20px;
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
 }
 
 h1 {
@@ -27,3 +27,5 @@ a {
     margin-top: 0;
     font-size: 24px;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
