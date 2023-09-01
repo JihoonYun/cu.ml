@@ -1,81 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sidebar Menu Example</title>
-    <!-- Add Bootstrap CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible Sidebar Menu</title>
+    <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        /* 추가한 CSS 스타일 */
-        .submenu {
-            padding-left: 20px;
-        }
-    </style>
+    <!-- Include your custom CSS here if needed -->
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- 좌측 사이드바 메뉴 -->
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
-                <div class="position-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="javascript:void(0);" onclick="loadContent('A')">A</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-B">B</a>
-                            <div class="collapse submenu" id="submenu-B">
-                                <ul class="nav flex-column">
-                                    <li><a class="nav-link" href="javascript:void(0);" onclick="loadContent('B-1')">1</a></li>
-                                    <li><a class="nav-link" href="javascript:void(0);" onclick="loadContent('B-2')">2</a></li>
-                                    <li><a class="nav-link" href="javascript:void(0);" onclick="loadContent('B-3')">3</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0);" onclick="loadContent('C')">C</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            
-            <!-- 우측 프레임 -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <iframe id="content-frame" src="about:blank" style="width: 100%; height: 100%; border: none;"></iframe>
-            </main>
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar">
+        <div class="sidebar-heading">Collapsible Menu</div>
+        <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action" onclick="loadContent('Home')">Home</a>
+            <a href="#submenu" class="list-group-item list-group-item-action" data-toggle="collapse">
+                Submenu
+            </a>
+            <div id="submenu" class="collapse">
+                <a href="#" class="list-group-item list-group-item-action" onclick="loadContent('Submenu-1')">Submenu 1</a>
+                <a href="#" class="list-group-item list-group-item-action" onclick="loadContent('Submenu-2')">Submenu 2</a>
+                <a href="#" class="list-group-item list-group-item-action" onclick="loadContent('Submenu-3')">Submenu 3</a>
+            </div>
+            <a href="#" class="list-group-item list-group-item-action" onclick="loadContent('About')">About</a>
         </div>
     </div>
+    
+    <!-- Page Content -->
+    <div id="content">
+        <iframe id="content-frame" src="about:blank" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
 
+    <!-- Include Bootstrap JS and jQuery -->
     <!-- Add Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    
+    <!-- Your custom JavaScript -->
     <script>
         function loadContent(menuItem) {
             var contentFrame = document.getElementById('content-frame');
-            switch (menuItem) {
-                case 'A':
-                    contentFrame.src = 'page_A.html';
-                    break;
-                case 'B':
-                    contentFrame.src = 'page_B.html';
-                    break;
-                case 'B-1':
-                    contentFrame.src = 'page_B_1.html';
-                    break;
-                case 'B-2':
-                    contentFrame.src = 'page_B_2.html';
-                    break;
-                case 'B-3':
-                    contentFrame.src = 'page_B_3.html';
-                    break;
-                case 'C':
-                    contentFrame.src = 'page_C.html';
-                    break;
-                default:
-                    break;
-            }
+            contentFrame.src = menuItem + '.html';
         }
     </script>
 </body>
 </html>
+
