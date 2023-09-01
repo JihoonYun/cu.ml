@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function showContent(contentId) {
+            var contentIframe = parent.document.getElementById('content-frame');
+            contentIframe.src = contentId + '.html';
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li><a href="javascript:void(0);" onclick="showContent('home')">Home</a></li>
+        <li><a href="javascript:void(0);" onclick="showContent('machine-learning')">Machine Learning</a></li>
+        <li><a href="javascript:void(0);" onclick="showContent('about-me')">About me</a></li>
+    </ul>
+</body>
+</html>
