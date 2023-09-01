@@ -4,6 +4,12 @@
     <title>Sidebar Menu Example</title>
     <!-- Add Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* 추가한 CSS 스타일 */
+        .submenu {
+            padding-left: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -16,12 +22,14 @@
                             <a class="nav-link active" href="javascript:void(0);" onclick="loadContent('A')">A</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0);" onclick="loadContent('B')">B</a>
-                            <ul class="submenu">
-                                <li><a class="nav-link" href="javascript:void(0);" onclick="loadContent('B-1')">1</a></li>
-                                <li><a class="nav-link" href="javascript:void(0);" onclick="loadContent('B-2')">2</a></li>
-                                <li><a class="nav-link" href="javascript:void(0);" onclick="loadContent('B-3')">3</a></li>
-                            </ul>
+                            <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-B">B</a>
+                            <div class="collapse submenu" id="submenu-B">
+                                <ul class="nav flex-column">
+                                    <li><a class="nav-link" href="javascript:void(0);" onclick="loadContent('B-1')">1</a></li>
+                                    <li><a class="nav-link" href="javascript:void(0);" onclick="loadContent('B-2')">2</a></li>
+                                    <li><a class="nav-link" href="javascript:void(0);" onclick="loadContent('B-3')">3</a></li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);" onclick="loadContent('C')">C</a>
