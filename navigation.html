@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <script>
         function showContent(contentId) {
-            var contentIframe = parent.document.getElementById('content-frame');
-            contentIframe.src = contentId + '.html';
+            parent.document.frames["content-frame"].location.href = contentId + '.html';
         }
     </script>
 </head>
